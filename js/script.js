@@ -1,302 +1,225 @@
-/**
- * -------------------------------------------------------------------
- *  1. THEME TOGGLE (VIEW TRANSITIONS API)
- * -------------------------------------------------------------------
+﻿/**
+ * Taseen Portfolio - Core Script
+ * Cleaned & Optimized Version
  */
+
+// 1. UTILITIES & CONSTANTS
+const doc = document.documentElement;
+const storageKey = 'portfolio-theme';
+
+// 2. THEME MANAGEMENT - Handles Light/Dark mode and transitions
 function initTheme() {
   const themeToggle = document.querySelector('.theme-toggle');
-  const doc = document.documentElement;
+  const savedTheme = localStorage.getItem(storageKey) || 'dark';
 
-  // Load saved theme or default to dark
-  const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
-  doc.setAttribute('data-theme', savedTheme);
-  updateThemeIcon(savedTheme);
+  applyTheme(savedTheme);
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', (e) => {
-      const currentTheme = doc.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      toggleThemeWithTransition(newTheme, e);
-    });
-  }
-}
+  themeToggle?.addEventListener('click', (e) => {
+    const newTheme = doc.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
 
-function updateThemeIcon(theme) {
-  const sunIcon = document.querySelector('.sun-icon');
-  if (sunIcon) {
-    sunIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-  }
-}
+    // Support for View Transitions API for smooth theme switching
+    if (!document.startViewTransition) {
+      applyTheme(newTheme);
+      return;
+    }
 
-function toggleThemeWithTransition(newTheme, event) {
-  const doc = document.documentElement;
-
-  // Fallback for browsers that don't support View Transitions
-  if (!document.startViewTransition) {
-    applyTheme(newTheme);
-    return;
-  }
-
-  // Get click coordinates for circular reveal
-  const x = event.clientX;
-  const y = event.clientY;
-  doc.style.setProperty('--reveal-x', `${x}px`);
-  doc.style.setProperty('--reveal-y', `${y}px`);
-
-  document.startViewTransition(() => {
-    applyTheme(newTheme);
+    doc.style.setProperty('--reveal-x', `${e.clientX}px`);
+    doc.style.setProperty('--reveal-y', `${e.clientY}px`);
+    document.startViewTransition(() => applyTheme(newTheme));
   });
 }
 
+/**
+ * Updates the DOM and localStorage with the selected theme
+ */
 function applyTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('portfolio-theme', theme);
-  updateThemeIcon(theme);
+  doc.setAttribute('data-theme', theme);
+  localStorage.setItem(storageKey, theme);
+  const sunIcon = document.querySelector('.sun-icon');
+  if (sunIcon) sunIcon.textContent = theme === 'dark' ? 'THEME ☀️' : 'THEME 🌙';
 }
 
-/**
- * -------------------------------------------------------------------
- *  2. CUSTOM CURSOR
- * -------------------------------------------------------------------
- */
-function initCursor() {
+// 3. CURSOR & MOUSE INTERACTIONS - Custom cursor and hover effects
+function initMouseInteractions() {
   const dot = document.querySelector('.cursor-dot');
   const ring = document.querySelector('.cursor-ring');
   const mouseGlow = document.querySelector('.mouse-glow');
-  
+  const heroTerminal = document.querySelector('.hero-terminal');
+  const hero = document.querySelector('.hero');
+
   if (!dot || !ring) return;
 
-  window.addEventListener('mousemove', (e) => {
-    const { clientX: x, clientY: y } = e;
-    
-    dot.style.left = `${x}px`;
-    dot.style.top = `${y}px`;
-    ring.style.left = `${x}px`;
-    ring.style.top = `${y}px`;
+  let mouseX = 0, mouseY = 0;
+  let dotX = 0, dotY = 0;
+  let ringX = 0, ringY = 0;
 
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    // Background Glow tracking
     if (mouseGlow) {
       mouseGlow.style.opacity = '1';
-      mouseGlow.style.left = `${x}px`;
-      mouseGlow.style.top = `${y}px`;
+      mouseGlow.style.transform = `translate3d(calc(${mouseX}px - 50%), calc(${mouseY}px - 50%), 0)`;
+    }
+
+    // Hero 3D Tilt (Desktop only)
+    if (heroTerminal && hero && window.innerWidth >= 992) {
+      const rect = hero.getBoundingClientRect();
+      const relX = mouseX - rect.left;
+      const relY = mouseY - rect.top;
+
+      const moveX = (relX - rect.width / 2) * 0.05;
+      const moveY = (relY - rect.height / 2) * 0.05;
+
+      heroTerminal.style.setProperty('--move-x', `${moveX}px`);
+      heroTerminal.style.setProperty('--move-y', `${moveY}px`);
+      heroTerminal.dataset.tiltX = (relY - rect.height / 2) / 25;
+      heroTerminal.dataset.tiltY = (rect.width / 2 - relX) / 25;
+      heroTerminal.dataset.isHovering = 'true';
     }
   });
 
+  // Smooth Cursor Animation Loop
+  const renderCursor = () => {
+    // LERP for smooth following
+    dotX += (mouseX - dotX) * 0.4;
+    dotY += (mouseY - dotY) * 0.4;
+    ringX += (mouseX - ringX) * 0.15;
+    ringY += (mouseY - ringY) * 0.15;
+
+    dot.style.transform = `translate3d(calc(${dotX}px - 50%), calc(${dotY}px - 50%), 0)`;
+    ring.style.transform = `translate3d(calc(${ringX}px - 50%), calc(${ringY}px - 50%), 0)`;
+
+    requestAnimationFrame(renderCursor);
+  };
+  renderCursor();
+
   document.addEventListener('mouseleave', () => {
     if (mouseGlow) mouseGlow.style.opacity = '0';
+    if (heroTerminal) heroTerminal.dataset.isHovering = 'false';
   });
 
-  const interactiveElements = 'a, button, .project-card, .skill-pill, .social-icon, .stat-card, .btn';
-  document.querySelectorAll(interactiveElements).forEach(el => {
+  // Cursor Hover Effects
+  const interactives = 'a, button, .project-card, .skill-pill, .social-icon, .stat-card, .btn, .day-box';
+  document.querySelectorAll(interactives).forEach(el => {
     el.addEventListener('mouseenter', () => ring.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => ring.classList.remove('cursor-hover'));
   });
-}
 
-/**
- * -------------------------------------------------------------------
- *  3. SCROLL EFFECTS & REVEALS
- * -------------------------------------------------------------------
- */
-function initScrollEffects() {
-  const header = document.querySelector('.site-header');
-  const scrollIndicator = document.querySelector('.scroll-indicator');
-  
-  // Intersection Observer for reveals
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-
-  document.querySelectorAll('.reveal, .stagger').forEach((el) => revealObserver.observe(el));
-
-  // Stagger children delay
-  document.querySelectorAll('.stagger').forEach((container) => {
-    Array.from(container.children).forEach((child, index) => {
-      child.style.transitionDelay = `${index * 0.1}s`;
+  // Spotlight effect for cards
+  const spotlightCards = document.querySelectorAll('.project-card, .skill-category, .stat-card, .day-box');
+  spotlightCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+      card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
     });
   });
 
-  // Active Nav Link Observer
+  // Magnetic Buttons
+  document.querySelectorAll('.btn-primary, .btn-outline, .social-icon').forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      if (window.innerWidth < 768) return;
+      const rect = el.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) * 0.2;
+      const y = (e.clientY - rect.top - rect.height / 2) * 0.2;
+      el.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    el.addEventListener('mouseleave', () => el.style.transform = '');
+  });
+
+  // Hero Tilt Animation Loop
+  if (heroTerminal) {
+    let curX = 0, curY = 0;
+    const animateHero = () => {
+      const isHovering = heroTerminal.dataset.isHovering === 'true';
+      const targetX = isHovering ? parseFloat(heroTerminal.dataset.tiltX) : 0;
+      const targetY = isHovering ? parseFloat(heroTerminal.dataset.tiltY) : 0;
+
+      curX += (targetX - curX) * 0.08;
+      curY += (targetY - curY) * 0.08;
+
+      const mX = heroTerminal.style.getPropertyValue('--move-x') || '0px';
+      const mY = heroTerminal.style.getPropertyValue('--move-y') || '0px';
+
+      if (isHovering || Math.abs(curX) > 0.01) {
+        heroTerminal.style.transform = `translate3d(${mX}, ${mY}, 0) rotateX(${curX}deg) rotateY(${curY}deg)`;
+        heroTerminal.style.animation = 'none';
+      } else {
+        heroTerminal.style.transform = '';
+        heroTerminal.style.animation = 'float-card 8s ease-in-out infinite';
+      }
+      requestAnimationFrame(animateHero);
+    };
+    animateHero();
+  }
+}
+
+// 4. SCROLL & NAVIGATION
+function initScrollAndNav() {
+  const header = document.querySelector('.site-header');
+  const scrollIndicator = document.querySelector('.scroll-indicator');
+  const menuBtn = document.querySelector('.menu-btn');
+  const siteNav = document.querySelector('.site-nav');
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.site-nav a');
 
-  const navObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const currentId = entry.target.getAttribute('id');
-          navLinks.forEach((link) => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentId}`) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    },
-    { threshold: 0.3, rootMargin: '-10% 0px -50% 0px' }
-  );
+  // Reveal Observer
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('in'));
+  }, { threshold: 0.15 });
 
-  sections.forEach((section) => navObserver.observe(section));
+  document.querySelectorAll('.reveal, .stagger').forEach(el => revealObserver.observe(el));
 
-  // Simple scroll listener for header/indicator
+  // Stagger Delay Auto-calc
+  document.querySelectorAll('.stagger').forEach(container => {
+    Array.from(container.children).forEach((child, i) => child.style.transitionDelay = `${i * 0.1}s`);
+  });
+
+  // Active Nav Observer
+  const navObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '-10% 0px -50% 0px' });
+
+  sections.forEach(s => navObserver.observe(s));
+
+  // Scroll Listeners
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
-    if (header) header.classList.toggle('scrolled', y > 50);
-    if (scrollIndicator) scrollIndicator.classList.toggle('scrolled', y > 100);
-    
-    // Parallax orbs
+    header?.classList.toggle('scrolled', y > 50);
+    scrollIndicator?.classList.toggle('scrolled', y > 100);
+
+    // Parallax
     const orb1 = document.querySelector('.orb-one');
     const orb2 = document.querySelector('.orb-two');
     if (orb1) orb1.style.transform = `translateY(${y * 0.1}px)`;
     if (orb2) orb2.style.transform = `translateY(${y * -0.1}px)`;
   }, { passive: true });
+
+  // Mobile Nav
+  menuBtn?.addEventListener('click', () => {
+    const open = siteNav.classList.toggle('open');
+    menuBtn.textContent = open ? 'Close' : 'Menu';
+  });
+
+  navLinks.forEach(link => link.addEventListener('click', () => {
+    siteNav.classList.remove('open');
+    menuBtn.textContent = 'Menu';
+  }));
 }
 
-/**
- * -------------------------------------------------------------------
- *  4. MOBILE NAVIGATION
- * -------------------------------------------------------------------
- */
-function initMobileNav() {
-  const menuBtn = document.querySelector('.menu-btn');
-  const siteNav = document.querySelector('.site-nav');
-  const navLinks = document.querySelectorAll('.site-nav a');
-
-  if (!menuBtn || !siteNav) return;
-
-  menuBtn.addEventListener('click', () => {
-    const isOpen = siteNav.classList.toggle('open');
-    menuBtn.textContent = isOpen ? 'Close' : 'Menu';
-  });
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      siteNav.classList.remove('open');
-      menuBtn.textContent = 'Menu';
-    });
-  });
-}
-
-/**
- * -------------------------------------------------------------------
- *  5. 3D EFFECTS & MAGNETIC
- * -------------------------------------------------------------------
- */
-function initMicroInteractions() {
-  // 3D Tilt for Hero Terminal
-  const terminal = document.querySelector('.hero-terminal');
-  const hero = document.querySelector('.hero');
-
-  if (terminal && hero) {
-    let mouseX = 0, mouseY = 0;
-    let currentRotateX = 0, currentRotateY = 0;
-    let isHovering = false;
-    const lerpAmount = 0.08; // Smoothness factor
-    const sensitivity = 25; // Range of motion
-
-    hero.addEventListener('mousemove', (e) => {
-      // Disable on touch devices or small screens for performance/usability
-      if (window.innerWidth < 992) return;
-
-      isHovering = true;
-      const { width, height, left, top } = hero.getBoundingClientRect();
-      const x = e.clientX - left;
-      const y = e.clientY - top;
-      
-      // Calculate offset from center for 3D tilt
-      mouseX = (y - height / 2) / sensitivity;
-      mouseY = (width / 2 - x) / sensitivity;
-
-      // Calculate follow movement (center following mouse)
-      const moveX = (x - width / 2) * 0.05;
-      const moveY = (y - height / 2) * 0.05;
-      
-      terminal.style.setProperty('--move-x', `${moveX}px`);
-      terminal.style.setProperty('--move-y', `${moveY}px`);
-    });
-
-    hero.addEventListener('mouseleave', () => {
-      isHovering = false;
-      mouseX = 0;
-      mouseY = 0;
-      terminal.style.setProperty('--move-x', '0px');
-      terminal.style.setProperty('--move-y', '0px');
-    });
-
-    function animateTilt() {
-      if (isHovering || Math.abs(currentRotateX) > 0.01 || Math.abs(currentRotateY) > 0.01) {
-        // Apply LERP
-        currentRotateX += (mouseX - currentRotateX) * lerpAmount;
-        currentRotateY += (mouseY - currentRotateY) * lerpAmount;
-        
-        const moveX = parseFloat(terminal.style.getPropertyValue('--move-x')) || 0;
-        const moveY = parseFloat(terminal.style.getPropertyValue('--move-y')) || 0;
-
-        terminal.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${currentRotateX}deg) rotateY(${currentRotateY}deg)`;
-        terminal.style.animation = 'none';
-
-        // If returned to center and not hovering, resume floating animation
-        if (!isHovering && Math.abs(currentRotateX) < 0.05 && Math.abs(currentRotateY) < 0.05 && Math.abs(moveX) < 0.1) {
-          terminal.style.transform = '';
-          terminal.style.animation = 'float-card 8s ease-in-out infinite';
-          currentRotateX = 0;
-          currentRotateY = 0;
-        }
-      }
-      requestAnimationFrame(animateTilt);
-    }
-    
-    animateTilt();
-  }
-
-  // Magnetic Buttons
-  const magneticElements = document.querySelectorAll('.btn-primary, .btn-outline, .social-icon');
-  magneticElements.forEach((el) => {
-    el.addEventListener('mousemove', (e) => {
-      if (window.innerWidth < 768) return;
-      const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      el.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
-    });
-    el.addEventListener('mouseleave', () => {
-      el.style.transform = '';
-    });
-  });
-
-  // Spotlight effect for cards
-  const cards = document.querySelectorAll('.project-card, .skill-pill, .stat-card, .day-box');
-  cards.forEach((card) => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
-    });
-  });
-}
-
-/**
- * -------------------------------------------------------------------
- *  INITIALIZATION
- * -------------------------------------------------------------------
- */
+// 5. BOOTSTRAP
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
-  initCursor();
-  initScrollEffects();
-  initMobileNav();
-  initMicroInteractions();
+  initMouseInteractions();
+  initScrollAndNav();
 
-  // Footer Year
-  const yearSpan = document.getElementById('year');
-  if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
 });
