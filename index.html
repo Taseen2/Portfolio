@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taseen | Portfolio</title>
+  <meta name="description" content="Personal portfolio website for Taseen" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <div class="background-assets">
+    <div class="mesh-gradient"></div>
+    <div class="mouse-glow"></div>
+    <div class="grain"></div>
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+    <div class="orb orb-three"></div>
+    <div class="orb orb-four"></div>
+  </div>
+  <div class="cursor-ring"></div>
+  <div class="cursor-dot"></div>
+
+  <!-- 
+  =====================================================================
+    HEADER & NAVIGATION
+  =====================================================================
+  -->
+  <header class="site-header" id="top">
+    <div class="nav-wrap">
+      <a class="logo" href="#top">Taseen<span class="logo-dot">.</span></a>
+
+      <button class="menu-btn">
+        Menu
+      </button>
+
+      <nav class="site-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 
+    =====================================================================
+      HERO SECTION
+    =====================================================================
+    -->
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>
+            Exploring, Creating, <span>Experimenting.</span>
+          </h1>
+          <p class="hero-copy">
+            Hi, I'm <span class="highlight">Taseen</span>. I craft responsive websites and interactive web experiences
+            with smooth animations through real-world projects.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Explore Work</a>
+            <a class="btn btn-outline" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <!-- Terminal Visualization -->
+        <div class="hero-visual reveal">
+          <div class="hero-terminal">
+            <div class="terminal-header">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <button class="theme-toggle terminal-toggle" aria-label="Toggle theme">
+                <span class="sun-icon">☀️</span>
+              </button>
+              <span class="terminal-title">taseen.js</span>
+            </div>
+            <div class="terminal-body">
+              <pre><code><div class="terminal-line"><span class="keyword">const</span> <span class="variable">developer</span> = {</div><div class="terminal-line">    <span class="property">name</span>: <span class="string">'Taseen'</span>,</div><div class="terminal-line">    <span class="property">role</span>: <span class="string">'Software Engineer'</span>,</div><div class="terminal-line">    <span class="property">stack</span>: [<span class="string">'JavaScript'</span>, <span class="string">'React'</span>, <span class="string">'Node.js'</span>],</div><div class="terminal-line">    <span class="property">mindset</span>: <span class="string">'Learn • Build • Improve'</span>,</div><div class="terminal-line">    <span class="property">focus</span>: <span class="string">'Web Development and DSA'</span>,</div><div class="terminal-line">    <span class="property">status</span>: <span class="string">'Building'</span></div><div class="terminal-line">    };</div><div class="terminal-line"></div><div class="terminal-line">    <span class="comment">// Always learning...</span></div><div class="terminal-line">    <span class="keyword">function</span> <span class="variable">createExp</span>() {</div><div class="terminal-line">    <span class="keyword">return</span> <span class="variable">developer</span>.<span class="variable">stack</span>.<span class="variable">map</span>(tech => {</div><div class="terminal-line">    <span class="keyword">return</span> <span class="string">`Optimizing ${tech}`</span>;</div><div class="terminal-line">    });</div><div class="terminal-line">    }</div></code></pre>
+            </div>
+          </div>
+          <div class="terminal-glow"></div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="mouse-visual">
+          <div class="mouse-dot"></div>
+        </div>
+        <span class="scroll-text">Scroll</span>
+      </div>
+    </section>
+
+    <!-- 
+    =====================================================================
+      ABOUT ME SECTION
+    =====================================================================
+    -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-box">
+          <div class="about-text">
+            <h2>About Me</h2>
+
+            <span class="about-mini-heading">My Story</span>
+            <p>
+              I'm a <span class="highlight">Computer Science student</span> passionate about building modern <span
+                class="highlight">full-stack</span> web applications and interactive digital experiences. I enjoy
+              developing creative projects and solving real-world problems through code.
+            </p>
+
+            <span class="about-mini-heading">Current Focus</span>
+            <p>
+              Currently, I'm improving my skills in <span class="highlight">JavaScript</span>, <span
+                class="highlight">React</span>, and full-stack technologies while consistently building and sharing
+              projects publicly.
+            </p>
+          </div>
+
+          <!-- Key Stats Cards -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">💻</div>
+              <div class="stat-info">
+                <span class="stat-num">200+</span>
+                <span class="stat-label">LeetCode Problems Solved</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🚀</div>
+              <div class="stat-info">
+                <span class="stat-num">30+</span>
+                <span class="stat-label">Projects Built</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🎨</div>
+              <div class="stat-info">
+                <span class="stat-num">30+</span>
+                <span class="stat-label">JS Challenges Completed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+    =====================================================================
+      PROJECTS SECTION
+    =====================================================================
+    -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="section-title">Projects</h2>
+        </div>
+
+        <div class="project-grid">
+          <!-- Featured Project: 30 Day Challenge -->
+          <article class="project-card featured">
+            <div class="project-content">
+              <span class="featured-badge">Featured Project</span>
+              <h3>30 DAY 30 PROJECTS</h3>
+              <p>A personal challenge to build 30 mini-applications in 30 days using vanilla JavaScript, focusing on DOM
+                manipulation and modern APIs.</p>
+              <ul class="project-tags">
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+                <li class="tag">JavaScript</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/Taseen2/JS30" class="project-link" target="_blank"
+                  rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+            <div class="project-media challenge-grid-container">
+              <div class="challenge-grid stagger">
+                <!-- Day 1-30 boxes -->
+                <div class="day-box" title="JavaScript Drum Kit">
+                  <div class="day-thumb" style="background-image: url('assets/projects/01.png')"></div>
+                  <div>
+                    <span class="video-list_number">Day 1</span>
+                    <div class="day-title">Drum Kit</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="https://taseen2.github.io/Drum-roll/ " target="_blank"
+                        rel="noopener noreferrer">Demo</a>
+                      <a class="small-btn github"
+                        href="https://github.com/Taseen2/JS30/tree/main/01%20-%20JavaScript%20Drum%20Kit"
+                        target="_blank">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="JS and CSS Clock">
+                  <div class="day-thumb" style="background-image: url('assets/projects/02.png')"></div>
+                  <div>
+                    <span class="video-list_number">Day 2</span>
+                    <div class="day-title">JS and CSS Clock</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="https://taseen2.github.io/Clock/" target="_blank">Demo</a>
+                      <a class="small-btn github"
+                        href="https://github.com/Taseen2/Clock" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="CSS Variables">
+                  <div class="day-thumb" style="background-image: url('assets/projects/03.png')"></div>
+                  <div>
+                    <span class="video-list_number">Day 3</span>
+                    <div class="day-title">CSS Variables</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="https://taseen2.github.io/PixelTune/" target="_blank">Demo</a>
+                      <a class="small-btn github" href="https://github.com/Taseen2/PixelTune" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Array Cardio-MovieLens">
+                  <div class="day-thumb" style="background-image: url('assets/projects/04.png')"></div>
+                  <div>
+                    <span class="video-list_number">Day 4</span>
+                    <div class="day-title">MovieLens</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="https://taseen2.github.io/MovieLens/" target="_blank">Demo</a>
+                      <a class="small-btn github" href="https://github.com/Taseen2/MovieLens" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Flex Panel Gallery">
+                  <div class="day-thumb" style="background-image: url('assets/projects/05.jpeg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 5</span>
+                    <div class="day-title">PathQuest</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="https://taseen2.github.io/PathQuest/" target="_blank">Demo</a>
+                      <a class="small-btn github" href="https://github.com/Taseen2/PathQuest" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Type Ahead">
+                  <div class="day-thumb" style="background-image: url('assets/projects/06.png')"></div>
+                  <div>
+                    <span class="video-list_number">Day 6</span>
+                    <div class="day-title">Premium Search</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="https://taseen2.github.io/Premium-Search/" target="_blank">Demo</a>
+                      <a class="small-btn github" href="https://github.com/Taseen2/Premium-Search" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Array Cardio Day 2">
+                  <div class="day-thumb" style="background-image: url('assets/projects/07.png')"></div>
+                  <div>
+                    <span class="video-list_number">Day 7</span>
+                    <div class="day-title">Premium Search-Shopping Cart</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="https://taseen2.github.io/Premium-Search/" target="_blank">Demo</a>
+                      <a class="small-btn github" href="https://github.com/Taseen2/Premium-Search" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Fun with HTML5 Canvas">
+                  <div class="day-thumb" style="background-image: url('assets/projects/08.png')"></div>
+                  <div>
+                    <span class="video-list_number">Day 8</span>
+                    <div class="day-title">ProDraw</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="https://taseen2.github.io/ProDraw/" target="_blank">Demo</a>
+                      <a class="small-btn github" href="https://github.com/Taseen2/ProDraw" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Dev Tools Domination">
+                  <div class="day-thumb" style="background-image: url('assets/projects/09.png')"></div>
+                  <div>
+                    <span class="video-list_number">Day 9</span>
+                    <div class="day-title">Dev Tools</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="https://taseen2.github.io/Dev-Tools/" target="_blank">Demo</a>
+                      <a class="small-btn github" href="https://github.com/Taseen2/Dev-Tools" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Hold Shift and Check Checkboxes">
+                  <div class="day-thumb" style="background-image: url('assets/projects/10.png')"></div>
+                  <div>
+                    <span class="video-list_number">Day 10</span>
+                    <div class="day-title">PixelArt</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="https://taseen2.github.io/Pixel-Art/" target="_blank">Demo</a>
+                      <a class="small-btn github" href="https://github.com/Taseen2/Pixel-Art" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 11 – Custom Video Player">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 11</span>
+                    <div class="day-title">MoodSpace</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Key Sequence Detection">
+                  <div class="day-thumb" style="background-image: url('assets/projects/12.jpeg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 12</span>
+                    <div class="day-title">Konami Code</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="https://taseen2.github.io/Konami-Code/" target="_blank">Demo</a>
+                      <a class="small-btn github" href="https://github.com/Taseen2/Konami-Code" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Portfolio making">
+                  <div class="day-thumb" style="background-image: url('assets/projects/13.jpg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 13</span>
+                    <div class="day-title">Portfolio</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 14 – JavaScript References vs Copying">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 14</span>
+                    <div class="day-title">JavaScript References vs Copying</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 15 – LocalStorage">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 15</span>
+                    <div class="day-title">LocalStorage</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 16 – Mouse Move Shadow">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 16</span>
+                    <div class="day-title">Mouse Move Shadow</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 17 – Sort Without Articles">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 17</span>
+                    <div class="day-title">Sort Without Articles</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 18 – Adding Up Times with Reduce">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 18</span>
+                    <div class="day-title">Adding Up Times with Reduce</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 19 – Webcam Fun">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 19</span>
+                    <div class="day-title">Webcam Fun</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 20 – Speech Detection">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 20</span>
+                    <div class="day-title">Speech Detection</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 21 – Geolocation">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 21</span>
+                    <div class="day-title">Geolocation</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 22 – Follow Along Link Highlighter">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 22</span>
+                    <div class="day-title">Follow Along Link Highlighter</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 23 – Speech Synthesis">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 23</span>
+                    <div class="day-title">Speech Synthesis</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 24 – Sticky Nav">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 24</span>
+                    <div class="day-title">Sticky Nav</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 25 – Event Capture, Propagation, Bubbling and Once">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 25</span>
+                    <div class="day-title">Event Capture, Propagation, Bubbling and Once</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 26 – Stripe Follow Along Nav">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 26</span>
+                    <div class="day-title">Stripe Follow Along Nav</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 27 – Click and Drag">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 27</span>
+                    <div class="day-title">Click and Drag</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 28 – Video Speed Controller">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 28</span>
+                    <div class="day-title">Video Speed Controller</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 29 – Countdown Timer">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 29</span>
+                    <div class="day-title">Countdown Timer</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="day-box" title="Day 30 – Whack A Mole">
+                  <div class="day-thumb" style="background-image: url('assets/projects/placeholder.svg')"></div>
+                  <div>
+                    <span class="video-list_number">Day 30</span>
+                    <div class="day-title">Whack A Mole</div>
+                    <div class="project-links">
+                      <a class="small-btn demo" href="#">Demo</a>
+                      <a class="small-btn github" href="#">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Secondary Projects -->
+          <article class="project-card">
+            <div class="project-media">
+              <img src="assets/projects/project-two.svg" alt="Project Two dashboard mockup" loading="lazy" />
+            </div>
+            <div class="project-content">
+              <h3>Dashboard UI</h3>
+              <p>A complex dashboard system with real-time data visualization.</p>
+              <ul class="project-tags">
+                <li class="tag">React</li>
+                <li class="tag">Chart.js</li>
+              </ul>
+              <div class="project-links">
+                <a href="#" class="project-link">View ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-media">
+              <img src="assets/projects/project-three.svg" alt="Project Three ecommerce mockup" loading="lazy" />
+            </div>
+            <div class="project-content">
+              <h3>E-commerce Concept</h3>
+              <p>A minimalist shopping experience focused on accessibility.</p>
+              <ul class="project-tags">
+                <li class="tag">TypeScript</li>
+                <li class="tag">Stripe</li>
+              </ul>
+              <div class="project-links">
+                <a href="#" class="project-link">View ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+    =====================================================================
+      TECHNICAL STACK SECTION
+    =====================================================================
+    -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="section-title">Technical Stack</h2>
+        </div>
+
+        <!-- Background Glow Orbs for Skills -->
+        <div class="skills-background">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+        </div>
+
+        <div class="skills-container stagger">
+          <div class="skill-category">
+            <h3><span class="skill-icon">🎨</span> Frontend</h3>
+            <div class="skills-list">
+              <div class="skill-pill">HTML5</div>
+              <div class="skill-pill">CSS3</div>
+              <div class="skill-pill">JavaScript</div>
+              <div class="skill-pill">React</div>
+              <div class="skill-pill">Tailwind CSS</div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><span class="skill-icon">⚙️</span> Backend & DB</h3>
+            <div class="skills-list">
+              <div class="skill-pill">Node.js</div>
+              <div class="skill-pill">Express.js</div>
+              <div class="skill-pill">MongoDB</div>
+              <div class="skill-pill">Firebase</div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><span class="skill-icon">🛠️</span> Tools & Workflow</h3>
+            <div class="skills-list">
+              <div class="skill-pill">Git</div>
+              <div class="skill-pill">GitHub</div>
+              <div class="skill-pill">Figma</div>
+              <div class="skill-pill">VS Code</div>
+              <div class="skill-pill">Vercel</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+    =====================================================================
+      CONTACT SECTION
+    =====================================================================
+    -->
+    <section class="section reveal" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            Open for opportunities
+          </div>
+          <h2>Let's work together</h2>
+          <p>
+            Have a project in mind or looking for a dedicated developer to join your team? I'm always excited to connect
+            and explore new possibilities.
+          </p>
+          <a class="btn btn-primary" href="mailto:taseenrashadgrd@gmail.com">taseenrashadgrd@gmail.com</a>
+
+          <div class="contact-socials stagger">
+            <a href="https://github.com/Taseen2" class="social-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/taseenrashad/" class="social-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.763z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.922 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 
+  =====================================================================
+    FOOTER
+  =====================================================================
+  -->
+  <footer class="site-footer">
+    <div class="container foot-wrap">
+      <p>© <span id="year"></span> Taseen</p>
+      <p>Built with Passion</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
